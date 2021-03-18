@@ -1,4 +1,4 @@
-.Title_1 {
+.title {
     color: red;
     text-align: center;
     background: rgb(129, 220, 243);
@@ -6,6 +6,6 @@
     font-size: 100px;
 }
 
-.Title_1:hover {
+.title:hover {
     color: saddlebrown;
 }
