@@ -2,6 +2,16 @@
 
 const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
 
+if (numberOfFilms > 0 && numberOfFilms < 10) {
+    alert("Просмотренно довольно мало фильмов");
+} else if (numberOfFilms > 0 && numberOfFilms < 30) {
+    alert("Вы классический зритель");
+} else if (numberOfFilms > 0 && numberOfFilms >= 30) {
+    alert("Вы киноман");
+} else {
+    alert("Произошла ошибка");
+}
+
 const personaMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -10,12 +20,24 @@ const personaMovieDB = {
     privat: false
 };
 
-const a = prompt("Один из последних просмотренных фильмов?", ""),
-    b = prompt("На сколько оцените его?", ""),
-    c = prompt("Один из последних просмотренных фильмов?", ""),
-    d = prompt("На сколько оцените его?", "");
+for (let i = 0; i < 2; ++i) {
+    let a = prompt("Один из последних просмотренных фильмов?", "");
 
-personaMovieDB.movies[a] = b;
-personaMovieDB.movies[c] = d;
+    if (a == null || a == '' || a.length > 50) {
+        while (a == null || a == '' || a.length > 50) {
+            a = prompt("Один из последних просмотренных фильмов?", "");
+        }
+    }
+
+    let b = prompt("На сколько оцените его?", "");
+
+    if (b == null || b == '' || b.length > 50) {
+        while (b == null || b == '' || b.length > 50) {
+            b = prompt("На сколько оцените его?", "");
+        }
+    }
+
+    personaMovieDB.movies[a] = b;
+}
 
 console.log(personaMovieDB);
